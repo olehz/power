@@ -1,0 +1,495 @@
+{
+    "tables": {
+        "lines": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "geometry",
+                    "key": null
+                },
+                {
+                    "type": "string",
+                    "name": "operator",
+                    "key": "operator"
+                },
+                {
+                    "type": "string",
+                    "name": "voltage",
+                    "key": "voltage"
+                },
+                {
+                    "type": "integer",
+                    "name": "cables",
+                    "key": "cables"
+                },
+                {
+                    "type": "integer",
+                    "name": "circuits",
+                    "key": "circuits"
+                },
+                {
+                    "type": "string",
+                    "name": "wires",
+                    "key": "wires"
+                },
+                {
+                    "type": "string",
+                    "name": "disused",
+                    "key": "disused"
+                },
+                {
+                    "type": "string",
+                    "name": "disused_power",
+                    "key": "disused:power"
+                },
+                {
+                    "type": "string",
+                    "name": "abandoned",
+                    "key": "abandoned"
+                },
+                {
+                    "type": "string",
+                    "name": "abandoned_power",
+                    "key": "abandoned:power"
+                }
+            ],
+            "type": "linestring",
+            "mapping": {
+                "power": ["line"]
+            }
+        },
+        "plants": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "geometry",
+                    "key": null
+                },
+                {
+                    "type": "string",
+                    "name": "name",
+                    "key": "name"
+                },
+                {
+                    "type": "string",
+                    "name": "name_ru",
+                    "key": "name:ru"
+                },
+                {
+                    "type": "string",
+                    "name": "name_uk",
+                    "key": "name:uk"
+                },                
+                {
+                    "type": "string",
+                    "name": "name_en",
+                    "key": "name:en"
+                },
+                {
+                    "type": "string",
+                    "name": "operator",
+                    "key": "operator"
+                },
+                {
+                    "type": "string",
+                    "name": "power",
+                    "key": "plant:output:electricity"
+                },
+                {
+                    "type": "string",
+                    "name": "plant_source",
+                    "key": "plant:source"
+                },
+                {
+                    "type": "string",
+                    "name": "generator_source",
+                    "key": "generator:source"
+                },
+                {
+                    "type": "string",
+                    "name": "start_date",
+                    "key": "start_date"
+                },
+                {
+                    "type": "string",
+                    "name": "wikipedia",
+                    "key": "wikipedia"
+                },
+                {
+                    "type": "string",
+                    "name": "disused",
+                    "key": "disused"
+                },
+                {
+                    "type": "string",
+                    "name": "disused_power",
+                    "key": "disused:power"
+                },
+                {
+                    "type": "string",
+                    "name": "abandoned",
+                    "key": "abandoned"
+                },
+                {
+                    "type": "string",
+                    "name": "abandoned_power",
+                    "key": "abandoned:power"
+                }
+            ],
+            "type": "polygon",
+            "filters": {
+                "exclude_tags": [
+                    ["plant:output:electricity", "__nil__"]
+                ]
+            },
+            "mapping": {
+                "power": ["plant"]
+            }
+        },
+        "substations": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "geometry",
+                    "key": null
+                },
+                {
+                    "type": "string",
+                    "name": "name",
+                    "key": "name"
+                },
+                {
+                    "type": "string",
+                    "name": "name_ru",
+                    "key": "name:ru"
+                },
+                {
+                    "type": "string",
+                    "name": "name_uk",
+                    "key": "name:uk"
+                },                
+                {
+                    "type": "string",
+                    "name": "name_en",
+                    "key": "name:en"
+                },
+                {
+                    "type": "string",
+                    "name": "operator",
+                    "key": "operator"
+                },
+                {
+                    "type": "string",
+                    "name": "voltage",
+                    "key": "voltage"
+                },
+                {
+                    "type": "string",
+                    "name": "rating",
+                    "key": "rating"
+                },
+                {
+                    "type": "string",
+                    "name": "substation",
+                    "key": "substation"
+                },
+                {
+                    "type": "integer",
+                    "name": "ref",
+                    "key": "ref"
+                },
+                {
+                    "type": "string",
+                    "name": "power",
+                    "key": "power"
+                },
+                {
+                    "type": "string",
+                    "name": "disused",
+                    "key": "disused"
+                },
+                {
+                    "type": "string",
+                    "name": "disused_power",
+                    "key": "disused:power"
+                },
+                {
+                    "type": "string",
+                    "name": "abandoned",
+                    "key": "abandoned"
+                },
+                {
+                    "type": "string",
+                    "name": "abandoned_power",
+                    "key": "abandoned:power"
+                }
+            ],
+            "type": "polygon",
+            "filters": {
+                "exclude_tags": [
+                    ["substation", "minor_distribution"]
+                ]
+            },
+            "mapping": {
+                "power": ["substation", "station", "sub_station"]
+            }
+        },
+        "plants2": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "geometry",
+                    "key": null
+                },
+                {
+                    "type": "string",
+                    "name": "name",
+                    "key": "name"
+                },
+                {
+                    "type": "string",
+                    "name": "name_ru",
+                    "key": "name:ru"
+                },
+                {
+                    "type": "string",
+                    "name": "name_uk",
+                    "key": "name:uk"
+                },                
+                {
+                    "type": "string",
+                    "name": "name_en",
+                    "key": "name:en"
+                },
+                {
+                    "type": "string",
+                    "name": "operator",
+                    "key": "operator"
+                },
+                {
+                    "type": "string",
+                    "name": "power",
+                    "key": "plant:output:electricity"
+                },
+                {
+                    "type": "string",
+                    "name": "plant_source",
+                    "key": "plant:source"
+                },
+                {
+                    "type": "string",
+                    "name": "generator_source",
+                    "key": "generator:source"
+                },
+                {
+                    "type": "string",
+                    "name": "start_date",
+                    "key": "start_date"
+                },
+                {
+                    "type": "string",
+                    "name": "wikipedia",
+                    "key": "wikipedia"
+                }
+            ],
+            "type": "point",
+            "filters": {
+                "exclude_tags": [
+                    ["plant:output:electricity", "__nil__"]
+                ]
+            },
+            "mapping": {
+                "power": ["plant"]
+            }
+        },
+        "substations2": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "geometry",
+                    "key": null
+                },
+                {
+                    "type": "string",
+                    "name": "name",
+                    "key": "name"
+                },
+                {
+                    "type": "string",
+                    "name": "name_ru",
+                    "key": "name:ru"
+                },
+                {
+                    "type": "string",
+                    "name": "name_uk",
+                    "key": "name:uk"
+                },                
+                {
+                    "type": "string",
+                    "name": "name_en",
+                    "key": "name:en"
+                },
+                {
+                    "type": "string",
+                    "name": "operator",
+                    "key": "operator"
+                },
+                {
+                    "type": "string",
+                    "name": "voltage",
+                    "key": "voltage"
+                },
+                {
+                    "type": "string",
+                    "name": "rating",
+                    "key": "rating"
+                },
+                {
+                    "type": "string",
+                    "name": "substation",
+                    "key": "substation"
+                },
+                {
+                    "type": "integer",
+                    "name": "ref",
+                    "key": "ref"
+                },
+                {
+                    "type": "string",
+                    "name": "power",
+                    "key": "power"
+                }
+            ],
+            "type": "point",
+            "filters": {
+                "exclude_tags": [
+                    ["substation", "minor_distribution"]
+                ]
+            },
+            "mapping": {
+                "power": ["station", "substation"]
+            }
+        },
+        "admin": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "geometry",
+                    "name": "boundary",
+                    "key": null
+                },
+                {
+                    "type": "string",
+                    "name": "name",
+                    "key": "name"
+                },
+                {
+                    "type": "member",
+                    "name": "admin_centre",
+                    "key": "admin_centre"
+                },
+                {
+                    "type": "member",
+                    "name": "subareas",
+                    "key": "subareas"
+                },
+                {
+                    "type": "string",
+                    "name": "name_ru",
+                    "key": "name:ru"
+                },
+                {
+                    "type": "string",
+                    "name": "name_pl",
+                    "key": "name:pl"
+                },
+                {
+                    "type": "string",
+                    "name": "name_uk",
+                    "key": "name:uk"
+                },                
+                {
+                    "type": "string",
+                    "name": "name_en",
+                    "key": "name:en"
+                },
+                {
+                    "type": "string",
+                    "name": "name_be",
+                    "key": "name:be"
+                },
+                {
+                    "type": "integer",
+                    "name": "admin_level",
+                    "key": "admin_level"
+                },
+                {
+                    "type": "string",
+                    "name": "country_code",
+                    "key": "ISO3166-1:alpha2"
+                },
+                {
+                    "type": "string",
+                    "name": "wikipedia",
+                    "key": "wikipedia"
+                },
+                {
+                    "type": "string",
+                    "name": "wikidata",
+                    "key": "wikidata"
+                },
+                {
+                    "type": "string",
+                    "name": "koatuu",
+                    "key": "koatuu"
+                },
+                {
+                    "type": "string",
+                    "name": "place",
+                    "key": "place"
+                }
+            ],
+            "type": "polygon",
+            "filters": {
+                "include_tags": [
+                    ["boundary", "administrative"]
+                ],
+                "exclude_tags": [
+                    ["name", "__nil__"]
+                ]
+            },
+            "mapping": {
+                "admin_level": ["2","4"]
+            }
+        }
+    }
+}
